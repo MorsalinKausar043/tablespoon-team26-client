@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { addToDb, getStoredCart, removeFromDb } from "./useLocalStorage";
+import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import firebaseInitializetion from "../firebase/firebase.init";
 
 firebaseInitializetion();
@@ -13,6 +14,42 @@ const useProducts = () =>{
     const [displayProducts, setDisplayProducts] = useState([]);
     const [cart, setCart] = useState([]);
     const [quantity, setQuantity] = useState(0);
+
+    // useFirebase---------------------->
+    const [isLoading , setIsLoading] = useState(true)
+    const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
+    const HandleGoogleSignUp = () => {
+        setIsLoading(false);
+        return signInWithPopup(auth, googleProvider);
+    };
+
+    const HandleGithubSignUp = () => {
+        setIsLoading(false);
+        return signInWithPopup(auth, githubProvider);
+    };
+
+    const logOut = () => signOut(auth);
+
+    useEffect( ()=>
+        onAuthStateChanged(auth, (user) => {
+            if (user)
+            {
+                
+                setUser(user);
+                localStorage.setItem('Auth', JSON.stringify(user))
+
+            } else {
+              
+                setUser({})
+            }
+            setIsLoading(false)
+          })
+        , [auth])
+    
+    // fireba close ----------------------->  
     
     const getStarting = JSON.parse(localStorage.getItem('starting'));
 
@@ -83,15 +120,15 @@ const useProducts = () =>{
     // -------------------------------------------------------------------------
     // Authentication
     // -------------------------------------------------------------------------
-    useEffect( () => {
-        const authUser = JSON.parse(localStorage.getItem('Auth'));
-        setUser(authUser)
-    }, [])
+    // useEffect( () => {
+    //     const authUser = JSON.parse(localStorage.getItem('Auth'));
+    //     setUser(authUser)
+    // }, [])
 
-    const handleLogout = () => {
-        localStorage.removeItem('Auth');
-        setUser({});
-    };
+    // const handleLogout = () => {
+    //     localStorage.removeItem('Auth');
+    //     setUser({});
+    // };
 
 
     return {
@@ -111,7 +148,12 @@ const useProducts = () =>{
         authMessage,
         user,
         setUser,
-        handleLogout,
+        // handleLogout,
+        HandleGithubSignUp,
+        HandleGoogleSignUp,
+        logOut,
+        isLoading,
+        setIsLoading
     }
 }
 
