@@ -1,0 +1,113 @@
+.furniture-container{
+    background-color: #eaded7;
+    position: relative;
+    height: 400px;
+}
+.furniture-top-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0px;
+}
+.furniture-top-left{
+    width: 50%;
+}
+.furniture-top-left h2{
+    font-size: 2rem;
+    letter-spacing:0.1rem;
+    font-weight:800;
+    color: #453227;
+}
+
+.furniture-top-right{
+    width: 50%;
+    margin-bottom: -20px;
+}
+.furniture-top-right p{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #617d98;
+    font-weight:400;
+}
+
+.furniture-inner{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: absolute;
+    top: 200px;
+}
+.furniture-inner-details{
+    background-color: #c5a491;
+    border-radius:5px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    height: 320px
+}
+.furniture-inner-details p{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #5f4435;
+    font-weight:400;
+}
+.furniture-icon{
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    background-color: #eaded7;
+    color: #453227;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+@media only screen and (min-width: 280px) and (max-width:992px) {
+    .furniture-container .container{
+        max-width: 100% !important;
+    }
+    .furniture-top-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin:  0 auto !important;
+    }
+    .furniture-top-left{
+        width: 100%;
+        margin-top: 50px;
+    }
+    .furniture-top-right{
+        width: 100%;
+        margin: 20px 0px;
+    }
+    .furniture-inner-details{
+        margin: 0px 20px 20px 0px !important;
+    }
+}
+@media only screen and (min-width: 767px) and (max-width:992px) {
+    .furniture-inner{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .furniture-container{
+        height: 1050px;
+    }
+    .furniture-inner{
+        top: 300px;
+    }
+}
+
+@media only screen and (min-width: 280px) and (max-width:767px) {
+    .furniture-inner{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .furniture-container{
+        height: 1400px;
+    }
+    .furniture-inner{
+        top: 320px;
+    }
+}
+

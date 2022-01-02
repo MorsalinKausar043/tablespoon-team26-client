@@ -1,0 +1,19 @@
+.newsletter{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.newsletter-img{
+    text-align: right;
+}
+.newsletter img{
+    width: 80%;
+}
+@media only screen and (min-width: 320px) and (max-width:1025px) {
+    .newsletter{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .newsletter-img{
+        text-align: center;
+    }
+}

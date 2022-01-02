@@ -1,0 +1,31 @@
+.product-details-summery{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+        rgb(0 0 0 / 12%) 0px 1px 3px 0px; */
+}
+
+.color-btn{
+    width: 20px !important;
+    height: 20px !important;
+    line-height: 20px !important;
+    border-radius:50%;
+    border: none;
+    margin-right: 8px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+@media only screen and (min-width: 280px) and (max-width:992px) {
+    .product-details-summery{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .product-details-summery-inner{
+        margin-left: 0px !important;
+    }
+}

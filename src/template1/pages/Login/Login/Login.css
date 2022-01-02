@@ -1,0 +1,51 @@
+.login-container{
+    margin: 0 auto;
+    box-shadow: 0 3px 13.05px 1.95px rgb(0 0 0 / 21%);
+    width: 40%;
+    padding:50px 0px;
+}
+.login-with-phone form{
+    width:100%;
+    text-align:center;
+}
+
+.login-with-phone form input[type=text] {
+    border: 2px solid #d2dae2;
+    outline: none;
+    border-radius: 6px;
+    width:300px;
+    height: 40px !important;
+    padding: 0px 10px;
+    box-shadow: 0px 3px 8.55px 0.45px rgb(0 0 0 / 21%);
+    font-size: 15px;
+}
+.login-with-phone form input[type=submit] {
+    background-color: #fff;
+    border: medium none;
+    border-radius: 6px;
+    box-shadow: 0 3px 13.05px 1.95px rgb(0 0 0 / 21%);
+    width:300px;
+    height: 40px !important;
+    padding: 0;
+    font-size: 13px !important;
+    background-color: #ff4747;
+    color: #fff;
+}
+.login-container input {
+    margin-bottom: 20px;
+}
+.login-container span {
+    color: #333 !important;
+}
+.login-container button {
+    color: #fff !important;
+    background-color: #ff4747;
+    border: 2px solid transparent;
+    outline: none;
+}
+.login-container button:hover {
+    color: #ff4747 !important;
+    background-color: transparent;
+    border: 2px solid #ff4747;
+    transition: 1s;
+}

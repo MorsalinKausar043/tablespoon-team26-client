@@ -1,0 +1,88 @@
+.all-products-container{
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+.all-products-inner{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.all-product-btn {
+    display: block;
+    padding: 0.25rem 0px;
+    text-transform: capitalize;
+    background: transparent;
+    border: none;
+    letter-spacing: 0.1rem;
+    color: #617d98;
+    cursor: pointer;
+    font-size: 15px;
+    border-bottom: 1px solid transparent;
+}
+
+.all-product-btn-active{
+    border-bottom: 1px solid #ab7a5f;
+    transition: 0.5s;
+}
+.all-products-container .company {
+    background: #f1f5f8;
+    border-radius: 0.25rem;
+    border-color: transparent;
+    padding: 0.25rem;
+    font-size: 15px;
+}
+.category-color-btn{
+    width: 20px !important;
+    height: 20px !important;
+    line-height: 20px !important;
+    border-radius:50%;
+    border: none;
+    margin-right: 8px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+
+}
+.all-products-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.search-container{
+    position: sticky !important;
+    top: 80px;
+    z-index: 99;
+}
+@media only screen and (min-width: 840px) and (max-width:1240px) {
+    .all-products-inner{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width: 280px) and (max-width:839px) {
+    .all-products-inner{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .all-products-header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 20px
+    }
+}
+@media only screen and (min-width: 550px) and (max-width:839px) {
+    .all-products-container{
+        display: grid;
+        grid-template-columns: 40% 60%;
+    }
+}
+@media only screen and (min-width: 280px) and (max-width:550px) {
+    .all-products-container{
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
