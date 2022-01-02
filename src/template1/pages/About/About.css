@@ -1,0 +1,26 @@
+.about{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.about h2{
+    font-size: 2.5rem;
+    font-weight:800;
+}
+.about p{
+    font-size: 1rem;
+    line-height: 2rem;
+    color: #617d98;
+    font-weight:400;
+}
+@media only screen and (min-width: 280px) and (max-width:992px) {
+    .about{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .about h2{
+       margin-top: 30px;
+    }
+    .about-inner{
+        margin-left: 0px !important;
+    }
+}
