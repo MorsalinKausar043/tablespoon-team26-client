@@ -16,7 +16,7 @@ const useProducts = () =>{
     
     const getStarting = JSON.parse(localStorage.getItem('starting'));
 
-    // https://stark-basin-43355.herokuapp.com/products  {heroku main and new api}
+    // https://stark-basin-43355.herokuapp.com/products  [heroku main and new api]
 
     // All products
     useEffect(() => {
