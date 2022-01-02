@@ -5,6 +5,8 @@ import Template2 from "./template2/Template2";
 import Template from "./template1/assets/Template";
 
 function App() {
+
+
   const [flag, setFlag] = useState(false);
   const [templateNumber, setTemplateNumber] = useState(null);
   let template = null;
@@ -52,6 +54,7 @@ function App() {
   }
 
   return <>{flag ? <>{template}</> : <p>Loading...............</p>}</>;
+ 
 }
 
 export default App;
