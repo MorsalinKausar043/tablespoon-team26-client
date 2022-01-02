@@ -35,10 +35,10 @@ const Checkout = () => {
                             <h2>Billing Details</h2>
                             <hr />
                             {/* <form onSubmit={handleSubmit(onSubmit)}> */}
-                                <input defaultValue={user.name} {...register("name")} />
+                                <input defaultValue={user.displayName} {...register("name")} />
                                 <input defaultValue={user.email} {...register("email")} />
-                                <input defaultValue={user.phone} {...register("phone")} />
-                                <input defaultValue={user.address} {...register("address")} />
+                                <input placeholder="Number" {...register("phone")} />
+                                <input placeholder="Address" {...register("address")} />
                                 <input placeholder="Order notes (Optional)" {...register("others")} />
                                 <input type="submit" value="PLACE ORDER"/>
                             {/* </form> */}
