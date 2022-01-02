@@ -11,6 +11,8 @@ function App() {
       <h3>its FrontEnd Auth</h3>
 
       <h4>its user panel</h4>
+
+      <h5>its from Redux</h5>
     </div>
   );
 }
