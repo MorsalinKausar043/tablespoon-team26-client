@@ -14,7 +14,7 @@ const Register = () => {
     const getStarting = JSON.parse(localStorage.getItem('starting'));
 
     const onSubmit = (data) => {
-        localStorage.setItem('Auth', JSON.stringify(data))
+        
         setUser(data);
         navigate('/cart')
 
