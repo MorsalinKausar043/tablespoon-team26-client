@@ -16,9 +16,11 @@ const useProducts = () =>{
     
     const getStarting = JSON.parse(localStorage.getItem('starting'));
 
+    // https://stark-basin-43355.herokuapp.com/products  [ heroku main and new api ]
+
     // All products
     useEffect(() => {
-            fetch("https://floating-caverns-25596.herokuapp.com/products")
+            fetch("https://stark-basin-43355.herokuapp.com/products")
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
