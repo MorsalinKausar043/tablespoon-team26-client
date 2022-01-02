@@ -1,0 +1,42 @@
+.banner-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner-left{
+    width: 50%;
+}
+.banner-left h1{
+    font-size: 3rem;
+    letter-spacing:0.1rem;
+    font-weight:800;
+}
+.banner-left p{
+    font-size: 1.25rem;
+    line-height: 2;
+    color: #617d98;
+    font-weight:400;
+    margin-top: 40px;
+}
+.banner-right{
+    width: 50%;
+    margin-bottom: -20px;
+}
+
+@media only screen and (min-width: 280px) and (max-width:992px) {
+    .banner-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .banner-left{
+        width: 100%;
+        margin-top: 50px;
+    }
+    .banner-right{
+        width: 100%;
+        margin: 20px 0px;
+    }
+}
+

@@ -1,0 +1,35 @@
+.account-inner{
+    width: 97%;
+    padding: 21px;
+    background-color: #fff;
+    border: 2px solid #ab7a5f;
+}
+.account-inner h2{
+    font-size: 26px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #0B2B3C;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+.account-inner input{
+    width: 100%;
+    margin-top: 22.5px;
+    padding: 10px;
+    outline: none;
+    border: 2px solid #eee;
+}
+.account-inner input[type=submit]{
+    display: inline-block;
+    background: #ab7a5f;
+    color: #fff;
+    border: 2px solid #ab7a5f;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 15px;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+.account-inner input:focus{
+    border: 2px solid #ab7a5f;
+}

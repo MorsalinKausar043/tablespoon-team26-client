@@ -1,0 +1,26 @@
+
+.nav-link{
+    padding: 3px 10px !important;
+    color: #617d98 !important;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+.nav-link:hover{
+    border-top: 1px solid #ab7a5f;
+    border-bottom: 1px solid #ab7a5f;
+    transition: 0.5s;
+}
+
+.sticky-top{
+    background-color: #fff !important
+}
+.header-container .navbar-toggler{
+    background-color: rgb(171, 122, 95) !important;
+    color: #fff !important;
+}
+
+@media only screen and (min-width: 0px) and (max-width:992px) {
+    .header-container .nav-link{
+        text-align: center !important
+    }
+}

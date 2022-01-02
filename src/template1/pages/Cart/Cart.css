@@ -1,0 +1,31 @@
+.cart-container{
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+
+.color-btn2{
+    width: 20px !important;
+    height: 20px !important;
+    line-height: 20px !important;
+    border-radius:50%;
+    border: none;
+    margin-right: 8px;
+}
+.cart-container span{
+    font-size: 13px !important;
+}
+.swal2-icon.swal2-success .swal2-success-ring {
+    border: 0.25em solid #ab7a5f !important;
+}
+.swal2-icon.swal2-success [class^=swal2-success-line] {
+    background-color: #ab7a5f !important;
+}
+.table>:not(:first-child) {
+    border-top: none !important;
+}
+@media only screen and (min-width: 280px) and (max-width:1140px) {
+    .cart-container{
+        display: flex;
+        flex-direction: column;
+    }
+}

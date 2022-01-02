@@ -1,0 +1,51 @@
+.register-container{
+    margin: 0 auto 15px;
+    box-shadow: 0 3px 13.05px 1.95px rgb(0 0 0 / 21%);
+    width: 40%;
+    padding:30px 0px;
+}
+.register-with-phone form{
+    width:100%;
+    text-align:center;
+}
+
+.register-with-phone form input[type=text], .register-with-phone form input[type=email], .register-with-phone form input[type=password]{
+    border: 2px solid #d2dae2;
+    outline: none;
+    border-radius: 6px;
+    width:300px;
+    height: 40px !important;
+    padding: 0px 10px;
+    box-shadow: 0px 3px 8.55px 0.45px rgb(0 0 0 / 21%);
+    font-size: 15px;
+}
+.register-with-phone form input[type=submit] {
+    background-color: #fff;
+    border: medium none;
+    border-radius: 6px;
+    box-shadow: 0 3px 13.05px 1.95px rgb(0 0 0 / 21%);
+    width:300px;
+    height: 40px !important;
+    padding: 0;
+    font-size: 13px !important;
+    background-color: #ff4747;
+    color: #fff;
+}
+.register-container input {
+    margin-bottom: 10px;
+}
+.register-container span {
+    color: #333 !important;
+}
+.register-container button {
+    color: #fff !important;
+    background-color: #ff4747;
+    border: 2px solid transparent;
+    outline: none;
+}
+.register-container button:hover {
+    color: #ff4747 !important;
+    background-color: transparent;
+    border: 2px solid #ff4747;
+    transition: 1s;
+}

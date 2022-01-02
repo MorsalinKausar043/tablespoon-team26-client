@@ -1,0 +1,7 @@
+.carousel .thumb{
+    height: 50px !important;
+}
+.product-details-summery-inner{
+    display: flex;
+    align-items: center;
+}
