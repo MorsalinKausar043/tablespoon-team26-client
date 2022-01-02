@@ -18,7 +18,7 @@ const useProducts = () =>{
 
     // All products
     useEffect(() => {
-            fetch("https://floating-caverns-25596.herokuapp.com/products")
+            fetch("https://stark-basin-43355.herokuapp.com/products")
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
