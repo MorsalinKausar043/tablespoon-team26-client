@@ -1,35 +1,39 @@
 import React from 'react';
-import { Button, Container } from 'react-bootstrap';
-import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { FcGoogle } from 'react-icons/fc';
+import { GoMarkGithub } from 'react-icons/go';
+import { NavLink } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
-    document.title = 'Login';
-
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => {
-        
-    };
 
     return (
-        <Container>
-            <div className="login-container">
-                <h3 className="pb-3 text-center" style={{color: '#ff4747'}}>Please Login</h3>
-                <div className="login-with-phone">
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <input type="text" placeholder="Please enter your phone number"{...register("example")} />
-                        <br/>
-                        <input type="submit" value="Login With OTP" />
-                    </form>
-                </div>
-                <div className="text-center">
-                    <Link to="/register">
-                        <span>New Member? <Button>Register</Button> here</span>
-                    </Link>
+        <>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12 col-10 mx-auto login_box">
+                        <div className="login_form shadow">
+                            <h2 className="login_title">Sign In With</h2>
+                            <button className="login_Btn" >
+                            {/* <button className="login_Btn" onClick={GoogleSignUp}> */}
+                                <FcGoogle className="input_box_icon"/>
+                                Continue With Google
+                            </button>
+                            <button className="login_Btn">
+                            {/* <button className="login_Btn" onClick={GithubSignUp}> */}
+                                <GoMarkGithub className="input_box_icon"/>
+                                Continue With Github
+                            </button>
+                            <div className="d-flex mt-3">
+                                <p className="me-2"><small>Don't have a account?</small></p>
+                                <NavLink to="/register">
+                                    <p className="text-primary"><small>Create an Account</small></p>
+                                </NavLink>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </Container>
+        </>
     );
 };
 
