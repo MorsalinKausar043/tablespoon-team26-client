@@ -10,7 +10,6 @@ const Checkout = () => {
     const onSubmit = data => {
         data.price = totalPrice; 
     };
-
    let cartPrice = 0;
    for(const product of cart){
        if(!product.quantity){
@@ -36,7 +35,7 @@ const Checkout = () => {
                             <hr />
                             {/* <form onSubmit={handleSubmit(onSubmit)}> */}
                                 <input defaultValue={user.displayName} {...register("name")} />
-                                <input defaultValue={user.email} {...register("email")} />
+                                <input placeholder="email" {...register("email")} />
                                 <input placeholder="Number" {...register("phone")} />
                                 <input placeholder="Address" {...register("address")} />
                                 <input placeholder="Order notes (Optional)" {...register("others")} />
