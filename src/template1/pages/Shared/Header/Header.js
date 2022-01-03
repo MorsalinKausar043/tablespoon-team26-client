@@ -8,7 +8,7 @@ import useAuth from '../../../hooks/useAuth';
 
 
 const Header = () => {
-    const {cart, user, handleLogout} = useAuth();
+    const {cart, user, logOut} = useAuth();
 
     const getStarting = JSON.parse(localStorage.getItem('starting'));
     const logo_png = "https://i.ibb.co/NnNgZVT/download.png";
@@ -43,8 +43,8 @@ const Header = () => {
                         <Navbar.Collapse className="justify-content-end">
                             <Nav.Link as={Link} to="/cart">Cart<FontAwesomeIcon icon={faShoppingCart}/>{cartLength ? <span><sup style={{color: 'red'}}>{cartLength}</sup>${cartPrice.toPrecision(5)}</span> : ''}</Nav.Link>
                             {
-                                user?.phone ?
-                                <Nav.Link as={Link} to="/login"><button onClick={handleLogout} style={{border: 'none', backgroundColor: 'transparent', color: '#617d98'}}>Logout <FontAwesomeIcon icon={faSignOutAlt}/></button></Nav.Link>
+                                user?.email || user?.displayName ?
+                                <Nav.Link as={Link} to="/login"><button onClick={logOut} style={{border: 'none', backgroundColor: 'transparent', color: '#617d98'}}>Logout <FontAwesomeIcon icon={faSignOutAlt}/></button></Nav.Link>
                                 :
                                 <Nav.Link as={Link} to="/login">Login <FontAwesomeIcon icon={faUserPlus}/></Nav.Link>
                             }

@@ -34,7 +34,7 @@ const Template = () => {
                 <Route path="/dashboard" element={<Dashboard />}>
                   <Route path="/dashboard" element={<DashboardHome/>}></Route>
                   <Route path="/dashboard/orders" element={<Orders/>}></Route>
-                  <Route path="/dashboard/account" element={<AccountDetails/>}></Route>
+                  <Route path="/dashboard/account" element={<PrivateRoute><AccountDetails/></PrivateRoute>}></Route>
                   <Route path="/dashboard/logout" element={<Logout/>}></Route>
                 </Route>
                 <Route path="/products" element={<AllProducts />}></Route>

@@ -3,12 +3,22 @@ import { useLocation, Navigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const { user } = useAuth();
-    let location = useLocation();
-    if (!user?.phone) {
-        return <Navigate to="/login" state={{ from: location }} />;
+  const { user, isLoading} = useAuth();
+  let location = useLocation();
+  if (isLoading)
+    {
+      return (
+        <>
+          <div className='col-12 col-md-4 mx-auto'>
+            <div className="spinner-border text-primary" role="status">
+              <span className="sr-only">Loading...</span>
+            </div>
+          </div>
+        </>
+        )
       }
-    return children;
+      return( user.displayName ? children :  <Navigate to="/login" state={{ from: location }} /> 
+      )
 };
 
 export default PrivateRoute;
