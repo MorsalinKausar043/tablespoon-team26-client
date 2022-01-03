@@ -22,6 +22,12 @@
     width: 50%;
     margin-bottom: -20px;
 }
+.shop-now-btn button:hover{
+    color: #ab7a5f;
+    background-color: transparent;
+    border: 2px solid #ab7a5f;
+    transition: 1s
+}
 
 @media only screen and (min-width: 280px) and (max-width:992px) {
     .banner-container{

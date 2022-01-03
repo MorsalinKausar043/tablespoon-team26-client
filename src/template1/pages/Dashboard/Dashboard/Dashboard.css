@@ -8,6 +8,7 @@
     background-color: #6e3f25;
     
     border: 2px solid transparent;
+    border-radius: 8px;
     width: 200px;
     font-family: "Quicksand", sans-serif;
     font-weight: 700;
