@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container ,Row,Col} from 'react-bootstrap';
 import './About.css';
 
 const About = () => {
@@ -27,6 +27,7 @@ const About = () => {
                 </div>
                 </div>
             </div>
+            
         </>
     );
 };
