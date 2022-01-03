@@ -28,10 +28,10 @@ const Checkout = () => {
                         <h2>Account Details</h2>
                         <hr />
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <input defaultValue={user?.name} {...register("name")} />
-                            <input defaultValue={user?.email} {...register("email")} />
-                            <input defaultValue={user?.phone} {...register("phone")} />
-                            <input defaultValue={user?.address} {...register("address")} />
+                            <input defaultValue={user?.displayName} {...register("name")} />
+                            <input placeholder='email' {...register("email")} />
+                            <input placeholder='number' {...register("phone")} />
+                            <input placeholder='address' {...register("address")} />
                             <input type="submit" value="PLACE ORDER"/>
                         </form>
                     </div>
