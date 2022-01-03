@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { addToDb, getStoredCart, removeFromDb } from "./useLocalStorage";
 import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import firebaseInitializetion from "../firebase/firebase.init";
+import { useDispatch } from "react-redux";
+import { tableSpoonItems } from "../redux/Slices/productSlice";
+import { useSelector } from "react-redux";
 
 firebaseInitializetion();
 
@@ -55,15 +58,24 @@ const useProducts = () =>{
 
     // https://stark-basin-43355.herokuapp.com/products  [ heroku main and new api ]
 
-    // All products
+    // All
+    
+    // useEffect(() => {
+    //         fetch("https://stark-basin-43355.herokuapp.com/products")
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setProducts(data)
+    //             setDisplayProducts(data)
+    //         })
+    // }, []);
+    
+    const dispatch = useDispatch()
+
     useEffect(() => {
-            fetch("https://stark-basin-43355.herokuapp.com/products")
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-                setDisplayProducts(data)
-            })
+       dispatch(tableSpoonItems())
     }, []);
+
+    const allProducts = useSelector(item => item.items.allItems)
 
     // cart quantity
     useEffect(() => {
@@ -132,6 +144,7 @@ const useProducts = () =>{
 
 
     return {
+        allProducts,
         products,
         setProducts,
         displayProducts,

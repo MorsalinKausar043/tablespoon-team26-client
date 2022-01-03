@@ -9,7 +9,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const AllProducts = () => {
     document.title = 'Products';
-    const { products, displayProducts, setDisplayProducts, getStarting } = useAuth();
+    const { products, allProducts, getStarting } = useAuth();
     const [checkButton, setCheckButton] = useState([]);
     const [rangePrice, setRangePrice] = useState(0);
     
@@ -17,40 +17,40 @@ const AllProducts = () => {
     const handleSearch = event => {
         const searchText = event.target.value;
         const matchedProducts = products.filter(product => product.title.toLowerCase().includes(searchText.toLowerCase()));
-        setDisplayProducts(matchedProducts);
+        allProducts(matchedProducts);
     }
 
     // ---------------------------------------------------------------------------
     const handleCompany = e => {
         const newProduct = products?.filter(product => product.brand === e.target.value);
-        e.target.value === 'all' ? setDisplayProducts([...products]) : setDisplayProducts(newProduct);
+        e.target.value === 'all' ? allProducts([...products]) : allProducts(newProduct);
     }
 
     // ---------------------------------------------------------------------------
     // color filter
     const handleBlueColor = () => {
         const newProduct = products?.filter(product => product.color === 'blue');
-        setDisplayProducts(newProduct);
+        allProducts(newProduct);
         setCheckButton('blue');
     }
     const handleRedColor = () => {
         const newProduct = products?.filter(product => product.color === 'red');
-        setDisplayProducts(newProduct);
+        allProducts(newProduct);
         setCheckButton('red');
     }
     const handleGreenColor = () => {
         const newProduct = products?.filter(product => product.color === 'green');
-        setDisplayProducts(newProduct);
+        allProducts(newProduct);
         setCheckButton('green');
     }
     const handleBlackColor = () => {
         const newProduct = products?.filter(product => product.color === 'black');
-        setDisplayProducts(newProduct);
+        allProducts(newProduct);
         setCheckButton('black');
     }
     const handleOrangeColor = () => {
         const newProduct = products?.filter(product => product.color === 'orange');
-        setDisplayProducts(newProduct);
+        allProducts(newProduct);
         setCheckButton('orange');
     }
 
@@ -59,22 +59,22 @@ const AllProducts = () => {
     const handleRangePrice = e => {
         setRangePrice(e.target.value)
         const newProduct = products?.filter(product => product.price <= e.target.value );
-        setDisplayProducts(newProduct);
+        allProducts(newProduct);
     }
 
     const handleClearFilter = () => {
-        setDisplayProducts([...products]);
+        allProducts([...products]);
     }
 
     // ----------------------------------------------------------------
     const handleSort = e => {
         if(e.target.value ===  'low'){
             products.sort((a, b) => a.price - b.price);
-            setDisplayProducts([...products]);
+            allProducts([...products]);
         }
         if(e.target.value ===  'high'){
             products.sort((a, b) => b.price - a.price);
-            setDisplayProducts([...products]);
+            allProducts([...products]);
         }
 
         if(e.target.value ===  'a'){
@@ -85,7 +85,7 @@ const AllProducts = () => {
                     return -1;
                 return 0;
             });
-            setDisplayProducts([...products]);
+            allProducts([...products]);
         }
         
         if(e.target.value ===  'z'){
@@ -96,7 +96,7 @@ const AllProducts = () => {
                     return 1;
                 return 0;
             });
-            setDisplayProducts([...products]);
+            allProducts([...products]);
         }
     }
 
@@ -146,7 +146,7 @@ const AllProducts = () => {
                     </div>
                     <div>
                         <div className="all-products-header">
-                            <h2 className="text-center py-3">Total <span style={{color: "#ab7a5f"}}>{displayProducts?.length}</span> Products Found</h2>
+                            <h2 className="text-center py-3">Total <span style={{color: "#ab7a5f"}}>{allProducts?.length}</span> Products Found</h2>
                             <div className="d-flex align-items-center">
                                 <p style={{margin: "0px", fontSize: "15px"}}>Sort By&nbsp;</p>
                                 <select onChange={handleSort} name="" id="">
@@ -158,12 +158,12 @@ const AllProducts = () => {
                             </div>
                         </div>
                         <div>
-                            {   displayProducts?.length === 0 ?
+                            {   allProducts?.length === 0 ?
                                     <h2 style={{ color: '#ab7a5f', margin: '50px 0', textAlign: 'center'}}>Loading</h2>
                                 :
                                 <div className="all-products-inner">
                                     {
-                                        displayProducts?.map((product,index) => <AllProductsSummery product={product} key={index}></AllProductsSummery>)
+                                        allProducts?.map((product,index) => <AllProductsSummery product={product} key={index}></AllProductsSummery>)
                                     }
                                 </div>
                             }
