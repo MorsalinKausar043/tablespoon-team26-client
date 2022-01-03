@@ -4,10 +4,9 @@
 }
 .dashboard-btn button{
     font-size: 16px;
-    /* color: #fff; */
     color:whitesmoke;
-    /* background-color: #ab7a5f; */
-    background-color: hotpink;
+    background-color: #6e3f25;
+    
     border: 2px solid transparent;
     width: 200px;
     font-family: "Quicksand", sans-serif;
@@ -33,6 +32,7 @@
     background-color: #ab7a5f;
     border: 2px solid #ab7a5f;
     transition: 1s;
+    /* background-color: transparent; */
     /* -  */
     border-radius: 5px;
 }

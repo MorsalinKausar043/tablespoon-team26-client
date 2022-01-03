@@ -11,7 +11,7 @@ const DashboardHome = () => {
     return (
         
         <div>
-        <div className="row gt-x box">
+        <div className="row box">
         <div className='col-md-6 '>
            <h2 className='text-warning bg-danger rounded mt-5'>Hello {user?.displayName} </h2>
             <div className=' p-3'>
