@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import './AccountDetails.css';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
     const {cart, user} = useAuth();
@@ -32,7 +33,9 @@ const Checkout = () => {
                             <input placeholder='email' {...register("email")} />
                             <input placeholder='number' {...register("phone")} />
                             <input placeholder='address' {...register("address")} />
-                            <input type="submit" value="PLACE ORDER"/>
+                            <Link to="/dashboard/payment">
+                                <input type="submit" value="PLACE ORDER"/>
+                            </Link>
                         </form>
                     </div>
                 </div>

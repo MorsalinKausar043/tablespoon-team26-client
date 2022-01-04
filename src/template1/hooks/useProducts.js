@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { addToDb, getStoredCart, removeFromDb } from "./useLocalStorage";
-import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, onAuthStateChanged, signOut, getIdToken } from "firebase/auth";
 import firebaseInitializetion from "../firebase/firebase.init";
 
 firebaseInitializetion();
@@ -14,6 +14,7 @@ const useProducts = () =>{
     const [displayProducts, setDisplayProducts] = useState([]);
     const [cart, setCart] = useState([]);
     const [quantity, setQuantity] = useState(0);
+    const [allProductPrice, setAllProductPrice] = useState(0);
 
     // useFirebase---------------------->
     const [isLoading , setIsLoading] = useState(true)
@@ -37,7 +38,8 @@ const useProducts = () =>{
         onAuthStateChanged(auth, (user) => {
             if (user)
             {
-                
+                getIdToken(user)
+                .then(idToken => localStorage.setItem('idToken', idToken));
                 setUser(user);
                 localStorage.setItem('Auth', JSON.stringify(user))
 
@@ -49,7 +51,7 @@ const useProducts = () =>{
           })
         , [auth])
     
-    // fireba close ----------------------->  
+    // fireba close ----------------------->
     
     const getStarting = JSON.parse(localStorage.getItem('starting'));
 
@@ -57,7 +59,7 @@ const useProducts = () =>{
 
     // All products
     useEffect(() => {
-            fetch("https://stark-basin-43355.herokuapp.com/products")
+        fetch("https://stark-basin-43355.herokuapp.com/products")
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
@@ -153,7 +155,9 @@ const useProducts = () =>{
         HandleGoogleSignUp,
         logOut,
         isLoading,
-        setIsLoading
+        setIsLoading,
+        allProductPrice,
+        setAllProductPrice
     }
 }
 
