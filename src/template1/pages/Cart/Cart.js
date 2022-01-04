@@ -8,7 +8,7 @@ import useAuth from '../../hooks/useAuth';
 
 const Cart = () => {
     document.title = 'Cart';
-    const { cart, handleRemove } = useAuth();
+    const { cart, handleRemove, allProductPrice } = useAuth();
     
 
     const total = cart.reduce((previous, product) => previous + product.price * product.quantity, 0)
@@ -63,9 +63,9 @@ const Cart = () => {
                 <div style={{width: "300px", margin: '0 auto'}}>
                     <div style={{border: "1px solid #bcccdc", padding: "30px",}}>
                         <h6><strong>Subtotal : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${orderTotal}</strong></h6>
-                        <h6>Shipping Fee : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$5.34</h6>
+                        <span style={{fontWeight:"bold"}}>Shipping Fee : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$50.34</span>
                         <hr />
-                        <h5>Order Total : ${parseInt(orderTotal) + 5.34}</h5>
+                        <h5>Order Total : ${parseInt(allProductPrice) + 50.34}</h5>
                             <Link to="/checkout">
                                     <Button  variant="primary" style={{backgroundColor: '#ab7a5f', border: 'none', width: '100%'}}>proceed to checkout</Button>
                             </Link>

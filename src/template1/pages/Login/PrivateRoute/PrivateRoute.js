@@ -5,7 +5,8 @@ import useAuth from '../../../hooks/useAuth';
 const PrivateRoute = ({ children, ...rest }) => {
   const { user, isLoading} = useAuth();
   let location = useLocation();
-  if (isLoading)
+  const token = sessionStorage.getItem('idToken');
+  if (isLoading && !token)
     {
       return (
         <>
